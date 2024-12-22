@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+.body{
+  width: 100%;
+}
+.btn1 {
+  background: #90b4ce;
+  border-radius: 8px;
+  padding: 10px 30px;
+  color: white;
+}
+
+.btn1:hover {
+  background: white;
+  color: #f3d2c1;
+}
+
+.outline {
+  outline-color: #3da9fc;
+}
+
+.outline:hover {
+  outline-color: white;
+}
+
+.service-card {
+  width: auto;
+  height: 338px;
+  background: transparent;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+  border-radius: 16px;
+}
+
+.service-card:nth-child(even){
+  border: 3px solid white;
+}
+
+@keyframes rotate-block {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.animate-rotate-block {
+  animation: rotate-block 1.5s linear infinite;
+}
+
