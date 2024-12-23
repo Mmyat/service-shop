@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <div className="md:px-10 px-7 mt-12">
-      <div className="text-white flex flex-col md:flex-row justify-between items-center py-8">
-        <p>@ Copyright 2023 | MyoMyatZaw</p>
-        <p className="hidden sm:block">Fullstack Developer</p>
+    <div className="w-full bg-dark py-12">
+      <div className="top-1/2 w-full h-[2px] bg-white"></div>
+      <div className="text-white md:flex-row justify-start items-center">
+        <p>© 2024 NEXTPARTS . All Rights Reserved.</p>
       </div>
     </div>
   );

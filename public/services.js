@@ -1,13 +1,32 @@
-import ruler from "../src/assets/ruler-pen.png"
-import code from "../src/assets/code.png"
-import git from "../src/assets/git-repo.png"
+import service1_1 from "../src/assets/service1-1.png";
+import service1_2 from "../src/assets/service1-2.png";
+import service1_3 from "../src/assets/service1-3.png";
+import service2_1 from "../src/assets/service2-1.png";
+import service2_2 from "../src/assets/service2-2.png";
+import service3_1 from "../src/assets/service3-1.png";
+import service3_2 from "../src/assets/service3-2.png";
+import service3_3 from "../src/assets/service3-3.png";
 const services = [
-    {id: 1, name:'UI & UX DESIGNING', description:'I design beautiful web iterfaces with Figma', image: ruler},
-    {id:2, name:'FRONTEND WEB DEVELOPMENT', description:'I create beautiful iterfaces with simple HTML, CSS, & JavaScript and also frameworks like ReactJS and NextJS', image: code},
-    {id:3, name:'BACKEND WEB DEVELOPMENT', description:'I create application iterfaces with Node JS and also frameworks Express JS', image: code},
-    {id:4, name:'VERSION CONTROL', description:'I can use version control systems well, and Git & Mecurial are my go-to tool.', image: git},
-    // {id:5, name:'NPM AND NODEJS', description:'I have core understanding of NPM. I can also develop general purpose applications with NodeJS', image:'../src/assets/icons/javascript.png'},
-    // {id:6, name:'WEB SCRAPING', description:'I can collect content and data from the internet then manipulate and analyze as needed.', image:'../src/assets/icons/web-scraping.png'},
+    {
+        id: 1, 
+        name:'Our Services', 
+        description:"Our mission is to ensure that your MacBook performs at its best, offering you reliability and peace of mind.Our mission is to ensure that your MacBook performs at its best, offering you reliability and peace of mind.Our mission is to ensure that your MacBook performs at its best, offering you reliability and peace of mind.", 
+        image: [service1_1,service1_2,service1_3],
+        link : ''
+    },
+    {
+        id: 2, 
+        name:'Spare Parts', 
+        description:"Our mission is to ensure that your MacBook performs at its best, offering you reliability and peace of mind.Our mission is to ensure that your MacBook performs at its best, offering you reliability and peace of mind.Our mission is to ensure that your MacBook performs at its best, offering you reliability and peace of mind.", 
+        image: [service2_1,service2_2],
+        link : ''
+    },{
+        id: 3, 
+        name:'We Sale', 
+        description:"Our mission is to ensure that your MacBook performs at its best, offering you reliability and peace of mind.Our mission is to ensure that your MacBook performs at its best, offering you reliability and peace of mind.Our mission is to ensure that your MacBook performs at its best, offering you reliability and peace of mind.", 
+        image: [service3_1,service3_2,service3_3],
+        link : ''
+    }
 ]
 
 export default services;

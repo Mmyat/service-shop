@@ -14,6 +14,7 @@ export default {
         slowspin: 'spin 1.5s linear infinite',
       },
       colors: {
+        white : '#FFFFFF',
         primary: '#3da9fc',
         Secondary:'#282162',
         tertiary:'#848191',
