@@ -16,14 +16,6 @@
   color: #f3d2c1;
 }
 
-.outline {
-  outline-color: #3da9fc;
-}
-
-.outline:hover {
-  outline-color: white;
-}
-
 .service-card {
   width: auto;
   height: 338px;

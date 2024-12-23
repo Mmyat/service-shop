@@ -4,10 +4,10 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import SparePart from "./components/SparePart";
+// import SparePart from "./components/SparePart";
 import Services from "./components/Services";
 import { useState, useEffect } from "react";
-import spinner from "./assets/loading.png";
+import ShowReview from "./components/ShowReview";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -38,8 +38,8 @@ const App = () => {
           <div>
             <Home />       
             <Services />
-            <SparePart />
             <About />
+            {/* <ShowReview/> */}
             <Contact />
             <Footer />
           </div>
