@@ -21,9 +21,9 @@ export default {
         light:'#fffff',
         dark: '#1E1E1E',
         btntext : "#001858",
-        title : "#001858",
-        paragraph: "#172c66",
-        cardbg : "#90b4ce",
+        title : "#1E1E1E",
+        paragraph : "#4C4C4C",
+        header : "#4C4C4C"
       }
     },
   },

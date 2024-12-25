@@ -37,11 +37,10 @@ const App = () => {
           <Header />
           <div>
             <Home />       
-            <Services />
+            {/* <Services />
             <About />
-            {/* <ShowReview/> */}
             <Contact />
-            <Footer />
+            <Footer /> */}
           </div>
         </div>
       )}
