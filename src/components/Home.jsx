@@ -73,18 +73,24 @@ const Home = () => {
         title: "facebook",
       },
     ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextReview = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-  };
-
-  const prevReview = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
-    );
-  };
+ 
+    const [currentIndex, setCurrentIndex] = useState(0);
+  
+    const nextReview = () => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    };
+  
+    const prevReview = () => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
+      );
+    };
+  
+    // Helper function to safely access reviews with cyclic indexing
+    const getReview = (offset) => {
+      const index = (currentIndex + offset + reviews.length) % reviews.length;
+      return reviews[index];
+    };
 
   return (
     <div className="font-sans">
@@ -98,7 +104,7 @@ const Home = () => {
           <button className="bg-[#CDCDCD] text-black py-2 px-6 rounded-md hover:bg-gray-300">View More</button>
           <img src={Image1} className="w-72 h-72" alt="image-1" />
         </div>
-        <div className="md:w-1/2 flex items-center justify-center">
+        <div className="md:w-1/2 flex hidden md:block">
           <img src={Image2} alt="MacBook repair" className="w-72 h-72 object-contain" />
         </div>
       </section>
@@ -117,7 +123,7 @@ const Home = () => {
                   </a>
                 )}
               </div>
-              <div className="md:w-1/2 flex gap-4">
+              <div className="md:w-1/2 flex gap-4 overflow-x-auto">
                 {service.image.map((img, index) => (
                   <img key={index} src={img} alt={service.name} className="w-36 h-36 object-cover rounded-lg shadow-md" />
                 ))}
@@ -142,23 +148,45 @@ const Home = () => {
       </section>
       {/* Customer Reviews */}
       <section className="bg-white py-4">
-        <h2 className="text-3xl text-dark font-semibold text-center mb-4">What Our Customers Say</h2>
-        <div className="top-1/2 w-full h-[1.5px] bg-paragraph mb-6"></div>
-        <div className="flex items-center justify-center gap-4 relative">
-          <button onClick={prevReview} className="bg-gray-300 p-2 rounded-full hover:bg-gray-400">‹</button>
-          <div className="bg-gray-100 p-6 w-96 rounded-lg shadow-md text-center">
-            <h3 className="text-xl text-dark font-semibold">{reviews[currentIndex].name}</h3>
-            <p className="text-gray-600 mt-2">{reviews[currentIndex].description}</p>
-            <div className="mt-4">
-              {[...Array(reviews[currentIndex].rating)].map((_, index) => (
-                <span key={index} className="text-yellow-500">&#9733;</span>
-              ))}
+      <h2 className="text-3xl text-dark font-semibold text-center mb-4">
+        What Our Customers Say
+      </h2>
+      <div className="top-1/2 w-full h-[1.5px] bg-paragraph mb-6"></div>
+      <div className="flex items-center justify-center gap-4 relative">
+        <button
+          onClick={prevReview}
+          className="bg-gray-300 p-2 rounded-full hover:bg-gray-400"
+        >
+          ‹
+        </button>
+        {[0, 1, 2].map((offset) => {
+          const review = getReview(offset);
+          return (
+            <div
+              key={review.id}
+              className="bg-gray-100 p-6 w-96 rounded-lg shadow-md text-center"
+            >
+              <h3 className="text-xl text-dark font-semibold">{review.name}</h3>
+              <p className="text-gray-600 mt-2">{review.description}</p>
+              <div className="mt-4">
+                {[...Array(review.rating)].map((_, index) => (
+                  <span key={index} className="text-yellow-500">
+                    &#9733;
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-          <button onClick={nextReview} className="bg-gray-300 p-2 rounded-full hover:bg-gray-400">›</button>
-        </div>
-      </section>
-      <div className="bg-dark md:px-10 px-7 py-2" id="contact">
+          );
+        })}
+        <button
+          onClick={nextReview}
+          className="bg-gray-300 p-2 rounded-full hover:bg-gray-400"
+        >
+          ›
+        </button>
+      </div>
+    </section>
+      <div className="bg-dark md:px-10 px-7 py-2">
         <div className="flex flex-col md:flex-row">
           {/* Text and Icons */}
           <div className="md:w-1/2">
