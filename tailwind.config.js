@@ -15,6 +15,7 @@ export default {
       },
       colors: {
         white : '#FFFFFF',
+        smoke : '#CDCDCD',
         primary: '#3da9fc',
         Secondary:'#282162',
         tertiary:'#848191',

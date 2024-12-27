@@ -4,7 +4,7 @@ import services from "../../public/services.js";
 import facebook from "../assets/facebook.svg";
 import map from "../assets/map.jpg";
 import { useState } from "react";
-
+import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 const Home = () => {
   const advantages = [
     { 
@@ -96,7 +96,7 @@ const Home = () => {
     <div className="font-sans">
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-center bg-[#1E1E1E] text-white h-screen">
-        <div className="md:w-1/2 p-6 text-center md:text-left">
+        <div className="w-[500px] md:w-1/2 text-center md:text-left ml-[120px]">
           <h1 className="text-4xl font-bold mb-4">NEXTPARTS</h1>
           <p className="text-lg leading-7 mb-6">
             Is your MacBook not performing like it used to? Whether it’s a cracked screen, a slow system, or a faulty battery, we’re here to help. Our expert technicians provide high-quality repairs and replacement parts to get your MacBook running like new again.
@@ -105,7 +105,7 @@ const Home = () => {
           <img src={Image1} className="w-72 h-72" alt="image-1" />
         </div>
         <div className="md:w-1/2 flex hidden md:block">
-          <img src={Image2} alt="MacBook repair" className="w-72 h-72 object-contain" />
+          <img src={Image2} alt="MacBook repair" className="w-[500px] h-[500px] object-contain" />
         </div>
       </section>
       {/* Services Section */}
@@ -155,17 +155,14 @@ const Home = () => {
       <div className="flex items-center justify-center gap-4 relative">
         <button
           onClick={prevReview}
-          className="bg-gray-300 p-2 rounded-full hover:bg-gray-400"
+          className="bg-gray-200 text-2xl text-header w-10 h-10 items-center justify-items-center rounded-full"
         >
-          ‹
+          <AiOutlineLeft/>
         </button>
         {[0, 1, 2].map((offset) => {
           const review = getReview(offset);
           return (
-            <div
-              key={review.id}
-              className="bg-gray-100 p-6 w-96 rounded-lg shadow-md text-center"
-            >
+            <div key={review.id} className="bg-white p-6 w-96 rounded-md border-2 border-smoke text-center">
               <h3 className="text-xl text-dark font-semibold">{review.name}</h3>
               <p className="text-gray-600 mt-2">{review.description}</p>
               <div className="mt-4">
@@ -180,9 +177,9 @@ const Home = () => {
         })}
         <button
           onClick={nextReview}
-          className="bg-gray-300 p-2 rounded-full hover:bg-gray-400"
+          className="bg-gray-200 text-2xl text-header w-10 h-10 items-center justify-items-center rounded-full"
         >
-          ›
+          <AiOutlineRight/>
         </button>
       </div>
     </section>
